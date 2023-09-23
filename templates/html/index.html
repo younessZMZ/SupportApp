@@ -1,0 +1,21 @@
+{% extends "html/base.html" %}
+{% block title %}Landing Page{% endblock %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h2>Welcome to the Platform Automation Tool</h2>
+
+            {% include 'html/flash_messages.html' %}
+
+            <div class="list-group mt-4">
+                <a href="/update_platform" class="list-group-item list-group-item-action">Update Platform</a>
+                <a href="/get_extract" class="list-group-item list-group-item-action">
+                    Get Extract
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

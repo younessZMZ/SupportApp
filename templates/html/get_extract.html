@@ -1,0 +1,51 @@
+{% extends "html/base.html" %}
+{% block title %}Get Extract{% endblock %}
+{% block head %}{% endblock %}
+{% block body %}
+
+<div class="container mt-4">
+    <h2>Get Extract</h2>
+    {% include 'html/flash_messages.html' %}
+
+    <form action="/get_extract" method="post">
+        <div class="form-group">
+            <label for="extract_type">Extract Type:</label>
+            <select class="form-control" name="extract_type" id="extract_type" onchange="checkType()">
+                <option value="parameters">Parameters</option>
+                <option value="indicators">Indicators</option>
+                <option value="composition">Composition</option>
+                <option value="attributes">Attributes</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="tickers">Tickers:</label>
+            <input type="text" class="form-control" name="tickers" placeholder="Comma-separated tickers" required>
+        </div>
+
+        <div class="form-group" id="namesDiv">
+            <label for="names">Names:</label>
+            <input type="text" class="form-control" name="names" placeholder="Comma-separated names">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <a href="/" class="btn btn-link mt-3">Back to Home</a>
+</div>
+
+<script>
+    function checkType() {
+        var type = document.getElementById('extract_type').value;
+        if (type === 'parameters' || type === 'indicators') {
+            document.getElementById('namesDiv').style.display = 'block';
+        } else {
+            document.getElementById('namesDiv').style.display = 'none';
+        }
+    }
+
+    // Call on page load to set the correct initial display
+    checkType();
+</script>
+
+{% endblock %}
