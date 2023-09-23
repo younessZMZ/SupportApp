@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Landing Page{% endblock %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <div class="d-flex flex-column align-items-center">
+        <h2>Welcome to the Platform Automation Tool</h2>
+
+        <div class="col-6 p-1">
+            <a href="/update_parameters" class="btn btn-primary w-100 my-2">Update Parameters</a>
+        </div>
+        <div class="col-6 p-1">
+            <a href="/update_attributes" class="btn btn-info w-100 my-2">Update Attributes</a>
+        </div>
+        <div class="col-6 p-1">
+            <a href="/get_extract" class="btn btn-success w-100 my-2">Get Extract</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block go_home %}
+<!-- We're intentionally leaving this block empty for the homepage -->
+{% endblock %}

@@ -17,12 +17,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def index():
-    return render_template('html/index.html')
-
-
-@app.route('/update_platform')
-def update_platform_page():
-    return render_template('html/update_platform.html')
+    return render_template('index.html')
 
 
 @app.route('/update_parameters', methods=['GET', 'POST'])
@@ -36,7 +31,7 @@ def update_parameters_page():
             update_parameters(filename)
             flash('Parameters updated successfully')
             return redirect(url_for('update_parameters_page'))
-    return render_template('html/update_parameters.html')
+    return render_template('update_parameters.html')
 
 
 @app.route('/update_attributes', methods=['GET', 'POST'])
@@ -50,7 +45,7 @@ def update_attributes_page():
             # update_attributes(filename)
             flash('Attributes updated successfully')
             return redirect(url_for('update_attributes_page'))
-    return render_template('html/update_attributes.html')
+    return render_template('update_attributes.html')
 
 
 @app.route('/get_extract', methods=['GET', 'POST'])
@@ -66,7 +61,7 @@ def get_extract():
         # output_file = generate_extract(extract_type, tickers, names)
         flash(f'The extract for {extract_type} would be generated here!')
         return redirect(url_for('get_extract'))
-    return render_template('html/get_extract.html')
+    return render_template('get_extract.html')
 
 
 if __name__ == "__main__":

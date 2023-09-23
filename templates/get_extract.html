@@ -1,11 +1,11 @@
-{% extends "html/base.html" %}
+{% extends "base.html" %}
 {% block title %}Get Extract{% endblock %}
 {% block head %}{% endblock %}
 {% block body %}
 
 <div class="container mt-4">
     <h2>Get Extract</h2>
-    {% include 'html/flash_messages.html' %}
+    {% include 'flash_messages.html' %}
 
     <form action="/get_extract" method="post">
         <div class="form-group">
@@ -31,21 +31,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
-    <a href="/" class="btn btn-link mt-3">Back to Home</a>
 </div>
 
-<script>
-    function checkType() {
-        var type = document.getElementById('extract_type').value;
-        if (type === 'parameters' || type === 'indicators') {
-            document.getElementById('namesDiv').style.display = 'block';
-        } else {
-            document.getElementById('namesDiv').style.display = 'none';
-        }
-    }
-
-    // Call on page load to set the correct initial display
-    checkType();
-</script>
+<script src="{{ url_for('static', filename='js/extract-type-handler.js') }}"></script>
 
 {% endblock %}
