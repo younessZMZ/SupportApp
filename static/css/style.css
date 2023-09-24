@@ -1,0 +1,33 @@
+body {
+/* Neutral background */
+background-color: #f3e6ff;
+height: 100vh;
+color: #333; /* dark text for contrast */
+}
+
+.main-buttons .btn {
+    padding: 15px 25px; /* Increase button height */
+    width: 150px;  /* adjust this value as you see fit */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 25px;
+    transition: transform 0.2s;
+}
+
+.main-buttons .btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated {
+    animation: fadeIn 0.5s forwards;
+}
